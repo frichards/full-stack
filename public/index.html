@@ -1,0 +1,51 @@
+<html>
+<head>
+	<LINK href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app="myData">
+
+<div ng-controller ="myCtrl"> 
+
+	<div>
+		<button type="button" ng-click ="getFamily()">Family</button>
+		<input type="text" ng-model="famname" placeholder ="name">
+		<input type="text" ng-model="famage" placeholder = "age">
+		<input type="text" ng-model="relation" placeholder = "Relationship">
+		<button type="button" ng-click ="addFamily()">submit</button>
+
+	</div>
+	<div>
+		<button type="button" ng-click ="getFriend()">Friends</button>
+		<input type="text" ng-model="fname" placeholder ="name">
+		<input type="text" ng-model="fage" placeholder = "age">
+		<input type="text" ng-model="friendsince" placeholder = "Friend since">
+		<button type="button" ng-click ="addFriend()">submit</button>
+	</div>
+	<div>
+		<button type="button" ng-click ="getActivities()">Activities</button>
+		<input type="text" ng-model="hobby" placeholder ="Hobby">
+		<button type="button" ng-click ="addHobby()">submit</button>
+	</div>
+	<div>
+	<button type="button" ng-click ="getMe()">Me</button>
+	</div>
+	<div class = "list">
+		<ul ng-show="show" ng-repeat = "item in info"> 
+			<li ng-repeat = "(key, val) in item">
+			{{key}}: {{val}}
+			</li>
+		</ul>
+
+		<div ng-hide="hide" ng-repeat = "hobby in hobbies">
+			{{hobby}}
+		</div>
+	</div>
+</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/myCtrl.js"></script>
+<script src="js/myService.js"></script>
+</body>
+</html>
